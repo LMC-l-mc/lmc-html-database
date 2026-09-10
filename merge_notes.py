@@ -3,15 +3,14 @@
 merge_notes.py —— 把 Obsidian "Webpage HTML Export" 插件导出的笔记合并成一个 index.html
 
 功能:
-  1. 收集 C:\\LMC-github-html-obsidian 下所有 HTML 笔记(site-lib 目录除外)
+  1. 收集源目录下所有 HTML 笔记(site-lib 目录除外)
   2. 提取每篇笔记的正文(保留导出插件的样式),合并进一个页面
-  3. 左侧生成固定目录(TOC),点击锚点跳转到对应笔记,支持明/暗主题切换
+  3. 目录(TOC)锚点跳转到对应笔记,支持明/暗主题切换;
+     手机端目录变成左侧抽屉:点左上角 ☰ 展开,点 ✕/遮罩/笔记链接自动收起
   4. 笔记内容里指向其他笔记的链接自动改写为页内锚点跳转
   5. 复制 site-lib 资源目录,保证发布到 GitHub Pages 后样式/字体正常
 
-输出:
-  C:\\obsidian-html\\index.html
-  C:\\obsidian-html\\site-lib\\
+输出: OUT_DIR 下的 index.html 和 site-lib(整个 OUT_DIR 可直接发布到 GitHub)
 
 用法: python merge_notes.py   (新增/修改笔记后重新运行即可)
 """
@@ -25,8 +24,8 @@ from collections import OrderedDict
 from html.parser import HTMLParser
 from pathlib import Path
 
-SRC_DIR = Path(r"C:\LMC-github-html-obsidian")  # 笔记源目录
-OUT_DIR = Path(r"C:\obsidian-html")             # 输出目录(整个目录可直接发布到 GitHub)
+SRC_DIR = Path(r"C:\html版的学习笔记（保存文件夹）")  # 笔记源目录
+OUT_DIR = Path(r"C:\html版的学习笔记（推送文件夹）")  # 输出目录(整个目录可直接发布到 GitHub)
 SKIP_DIRS = {"site-lib"}                        # 排除的资源目录
 SITE_TITLE = "我的笔记"                          # 站点标题(显示在目录顶部)
 
@@ -173,6 +172,7 @@ body { margin: 0; }
   z-index: 100;
 }
 #toc h1 { font-size: 1.15em; margin: 0 0 .8em; }
+.toc-head { display: flex; align-items: center; justify-content: space-between; }
 #toc .toc-group {
   margin-top: 1.2em; font-size: .8em; letter-spacing: .06em;
   color: var(--text-muted, #999);
@@ -187,6 +187,8 @@ body { margin: 0; }
   border-radius: 6px; background: var(--background-primary, #2a2b2e);
   color: var(--text-normal, #ddd);
 }
+/* 手机上打开/关闭目录的按钮和遮罩,桌面端隐藏 */
+#toc-open, #toc-close, #toc-overlay { display: none; }
 #content { margin-left: 280px; min-height: 100vh; }
 .note { border-bottom: 1px solid var(--background-modifier-border, rgba(255,255,255,.08)); }
 .note .obsidian-document {
@@ -199,9 +201,35 @@ body { margin: 0; }
 .back-to-toc a { color: var(--text-muted, #999); text-decoration: none; font-size: .9em; }
 .back-to-toc a:hover { color: var(--text-accent, #7d5bed); }
 @media (max-width: 800px) {
-  #toc { position: static; width: auto; max-height: 45vh; border-right: none;
-         border-bottom: 1px solid var(--background-modifier-border, rgba(255,255,255,.1)); }
-  #content { margin-left: 0; }
+  /* 目录变成左侧抽屉:默认收起,点左上角 ☰ 展开,点遮罩/✕/任意笔记自动收起 */
+  #toc {
+    width: min(80vw, 320px); max-height: none;
+    box-shadow: 4px 0 24px rgba(0,0,0,.35);
+    transform: translateX(-105%);
+    transition: transform .25s ease;
+    z-index: 310;
+  }
+  body.toc-open #toc { transform: translateX(0); }
+  #toc-close {
+    display: block; background: none; border: none;
+    color: var(--text-muted, #999); font-size: 1.15em; cursor: pointer;
+  }
+  #toc-open {
+    display: block; position: fixed; top: 10px; left: 10px; z-index: 300;
+    width: 42px; height: 42px; font-size: 20px; line-height: 1;
+    background: var(--background-primary, #2a2b2e);
+    color: var(--text-normal, #ddd);
+    border: 1px solid var(--background-modifier-border, rgba(255,255,255,.15));
+    border-radius: 10px; cursor: pointer;
+  }
+  #toc-overlay {
+    display: block; position: fixed; inset: 0; z-index: 305;
+    background: rgba(0,0,0,.45); opacity: 0; pointer-events: none;
+    transition: opacity .25s ease;
+  }
+  body.toc-open #toc-overlay { opacity: 1; pointer-events: auto; }
+  /* 给内容让出 ☰ 按钮的位置 */
+  #content { margin-left: 0; padding-top: 3.4em; }
 }
 """
 
@@ -223,6 +251,20 @@ THEME_SCRIPT = """<script>
       localStorage.setItem("theme", t);
       apply(t);
     });
+    // 手机端目录抽屉:☰ 展开,✕/遮罩/点击笔记链接后收起
+    function setTocOpen(open) {
+      document.body.classList.toggle("toc-open", open);
+    }
+    var openBtn = document.getElementById("toc-open");
+    var closeBtn = document.getElementById("toc-close");
+    var overlay = document.getElementById("toc-overlay");
+    if (openBtn) openBtn.addEventListener("click", function () { setTocOpen(true); });
+    if (closeBtn) closeBtn.addEventListener("click", function () { setTocOpen(false); });
+    if (overlay) overlay.addEventListener("click", function () { setTocOpen(false); });
+    var tocLinks = document.querySelectorAll("#toc a[href^='#']");
+    for (var i = 0; i < tocLinks.length; i++) {
+      tocLinks[i].addEventListener("click", function () { setTocOpen(false); });
+    }
   });
 })();
 </script>"""
@@ -254,7 +296,10 @@ def main():
     head = clean_head(head_match.group(1))
 
     toc_parts = ['<div id="toc">',
+                 '<div class="toc-head">',
                  "<h1>\U0001f4d3 %s</h1>" % html.escape(SITE_TITLE),
+                 '<button id="toc-close" type="button" aria-label="关闭目录">✕</button>',
+                 '</div>',
                  '<button id="theme-toggle" type="button">切换 明/暗 主题</button>']
     sections = []
     groups = OrderedDict()
@@ -293,6 +338,8 @@ def main():
                              % (anchor, html.escape(title)))
         toc_parts.append("</ul>")
     toc_parts.append("</div>")
+    toc_parts.append('<button id="toc-open" type="button" aria-label="打开目录">☰</button>')
+    toc_parts.append('<div id="toc-overlay"></div>')
 
     merged = (
         "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n"

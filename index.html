@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+<title>我的笔记</title>
+
+
+
+
+
+
+
+
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0"><link rel="icon" href="site-lib/media/favicon.jpg"><link rel="stylesheet" href="site-lib/styles/obsidian.css"><link rel="preload" href="site-lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="site-lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="site-lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="site-lib/styles/main-styles.css"></noscript><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-vertical-spacing:1.3em;--sidebar-margin:12px}:root{background-color:#202124}.sidebar{height:100%;font-size:14px;z-index:10;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));position:relative;overflow:hidden;overflow:clip;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}#left-sidebar{left:0}#right-sidebar{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}.sidebar.floating{position:absolute}.sidebar .leaf-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .leaf-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}#left-sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}#right-sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar #left-sidebar-content,.sidebar #right-sidebar-content{contain:none!important;container-type:normal!important;animation:none!important}.sidebar:has(.leaf-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:calc(2.3em + 2 * var(--sidebar-margin));width:var(--sidebar-width);padding:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}#left-sidebar .sidebar-topbar{left:0;flex-direction:row;border-top-right-radius:var(--radius-l)}#right-sidebar .sidebar-topbar{right:0;flex-direction:row-reverse;border-top-left-radius:var(--radius-l)}#left-sidebar .topbar-content{margin-right:calc(2.3em + var(--sidebar-margin));flex-direction:row}#right-sidebar .topbar-content{margin-left:calc(2.3em + var(--sidebar-margin));flex-direction:row-reverse}.topbar-content{overflow:hidden visible;overflow:clip visible;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:2px!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}#left-sidebar .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}#right-sidebar .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.feature-title{margin-left:1px;text-transform:uppercase;letter-spacing:.06em;margin-top:.75em;margin-bottom:.75em}.feature-header{display:flex;align-items:center;padding-top:0;font-size:1em;padding-left:0}body.floating-sidebars .sidebar{position:absolute}body{transition:background-color var(--color-fade-speed) ease-in-out}#navbar:not(:empty){display:flex;align-items:center;justify-content:space-between;padding:.5em 1em;width:100%}#main{display:flex;flex-direction:column;height:100%;width:100%;align-items:stretch;justify-content:center}#main-horizontal{display:flex;flex-direction:row;flex-grow:1;width:100%;align-items:stretch;justify-content:center}#center-content{flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0!important;transition:opacity .2s ease-in-out;pointer-events:none}#center-content>.obsidian-document{padding-left:2em;padding-right:1em;margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}body #center-content>.obsidian-document>.markdown-preview-sizer{padding-bottom:80vh;width:100%;max-width:var(--line-width);flex-basis:var(--line-width);transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}#center-content>.obsidian-document>div{width:100%!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}#center-content>.obsidian-document:not([data-type=markdown]).embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}#center-content>.obsidian-document:not([data-type=markdown]).embed>*{max-width:100%;max-height:100%;object-fit:contain}:not(h1,h2,h3,h4,h5,h6,li):has(> :is(.math,table)){overflow-x:auto!important}#center-content>.obsidian-document:not([data-type=markdown]){overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.obsidian-document[data-type=attachment]{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;width:100%}.obsidian-document[data-type=attachment]>*{outline:0;border:none;box-shadow:none}.obsidian-document[data-type=attachment] :is(img){max-width:90%;max-height:90%;object-fit:contain}.obsidian-document[data-type=attachment]>:is(audio){width:100%;max-width:min(90%,var(--line-width))}.obsidian-document[data-type=attachment]>:is(embed,iframe,video){width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain}.canvas-wrapper>:is(.header,.footer){z-index:100;position:absolute;display:flex;justify-content:center;flex-direction:column;width:100%;align-items:center}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style>
+<style>
+/* ===== 合并站点布局(由 merge_notes.py 自动生成) ===== */
+/* 覆盖导出样式表的 App 外壳布局:
+   html,body{height:100%} + body{overflow:clip;contain:strict}
+   会把 body 锁死为视口大小并裁掉所有溢出内容,
+   导致页面无法滚动、目录锚点跳转失效 */
+html, body { height: auto; min-height: 100vh; overflow: visible; contain: none; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+#toc {
+  position: fixed; top: 0; left: 0; bottom: 0; width: 280px;
+  box-sizing: border-box; overflow-y: auto; padding: 1em 1.2em 3em;
+  background: var(--background-secondary, #202124);
+  border-right: 1px solid var(--background-modifier-border, rgba(255,255,255,.1));
+  z-index: 100;
+}
+#toc h1 { font-size: 1.15em; margin: 0 0 .8em; }
+#toc .toc-group {
+  margin-top: 1.2em; font-size: .8em; letter-spacing: .06em;
+  color: var(--text-muted, #999);
+}
+#toc ul { list-style: none; margin: .3em 0 0; padding-left: .5em; }
+#toc li { margin: .4em 0; }
+#toc a { color: var(--text-normal, #ddd); text-decoration: none; }
+#toc a:hover { color: var(--text-accent, #7d5bed); }
+#theme-toggle {
+  margin: 0 0 .6em; padding: .35em .9em; font-size: .85em; cursor: pointer;
+  border: 1px solid var(--background-modifier-border, rgba(255,255,255,.15));
+  border-radius: 6px; background: var(--background-primary, #2a2b2e);
+  color: var(--text-normal, #ddd);
+}
+#content { margin-left: 280px; min-height: 100vh; }
+.note { border-bottom: 1px solid var(--background-modifier-border, rgba(255,255,255,.08)); }
+.note .obsidian-document {
+  max-width: var(--line-width, 40em); margin: 0 auto;
+  padding: 2em 1.5em 3em; height: auto; overflow: visible;
+}
+.note .markdown-preview-sizer { width: 100%; }
+.note .markdown-preview-pusher, .note .footer { display: none; }
+.back-to-toc { margin: 0 0 2em; text-align: center; }
+.back-to-toc a { color: var(--text-muted, #999); text-decoration: none; font-size: .9em; }
+.back-to-toc a:hover { color: var(--text-accent, #7d5bed); }
+@media (max-width: 800px) {
+  #toc { position: static; width: auto; max-height: 45vh; border-right: none;
+         border-bottom: 1px solid var(--background-modifier-border, rgba(255,255,255,.1)); }
+  #content { margin-left: 0; }
+}
+</style>
+</head>
+<body class="publish css-settings-manager styled-scrollbars show-inline-title show-ribbon is-focused">
+<script>
+(function () {
+  function currentTheme() {
+    return localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  }
+  function apply(theme) {
+    document.body.classList.toggle("theme-dark", theme === "dark");
+    document.body.classList.toggle("theme-light", theme !== "dark");
+  }
+  apply(currentTheme());
+  window.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("theme-toggle");
+    if (btn) btn.addEventListener("click", function () {
+      var t = document.body.classList.contains("theme-dark") ? "light" : "dark";
+      localStorage.setItem("theme", t);
+      apply(t);
+    });
+  });
+})();
+</script>
+<div id="top"></div>
+<div id="toc">
+<h1>📓 我的笔记</h1>
+<button id="theme-toggle" type="button">切换 明/暗 主题</button>
+<div class="toc-group">计算机工具</div><ul>
+<li><a href="#note-计算机工具-github">github</a></li>
+<li><a href="#note-计算机工具-obsidian">obsidian</a></li>
+</ul>
+<div class="toc-group">计算机知识</div><ul>
+<li><a href="#note-计算机知识-常见概念">常见概念</a></li>
+<li><a href="#note-计算机知识-计算机基础知识">计算机基础知识</a></li>
+</ul>
+</div>
+<div id="content">
+<!-- ===== 计算机工具/github.html ===== -->
+<section class="note" id="note-计算机工具-github">
+<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><div class="header"><h1 class="page-title heading inline-title" id="github_0">github</h1><div class="data-bar"></div></div><div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div><div class="el-p"><p dir="auto">git：一个开源免费的软件，功能是版本控制，当一个文件夹被git管理起来时，就变成了一个git仓库，被git仓库管理的文件夹下面会生成一个.git的子文件夹用来存放git的版本控制信息，git用commit作为版本控制的基本单元，每完成一次commit，git都保存了一个仓库，此时文件夹里所有文件的状态都被记录了下来，随着commit越来越多，会形成一条commit的历史链路，这样整个仓库都是可回溯的，每个项目参与者的每一次改动都会被这个commit链路记录下来，git的仓库分成两种分别是本地仓库（local repository）和远端仓库（remote repository），GitHub就是一个免费提供远端仓库的网站，hub的意思是中心，汇聚，集合，全世界的很多开发者会把自己用git进行版本控制的仓库，也就是一个个项目的文件夹上传到GitHub网站上<br>
+将本地文件和远端仓库联系：发送给ai：把这个文件（初始化成git项目，并）推送到GitHub上面，远端仓库的地址是XXX<br>
+init（初始化）：把文件夹用git管理起来，让这个文件夹变成一个git仓库<br>
+.gitignore：一个文件，这个文件声明了仓库里哪些文件不应该受到git管理</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>操作：打开VS code，在仓库根目录上面创建一个.gitignore文件然后在里面写上不被管理的文件</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>补充：查看是否被管理：
+<ul class="has-list-bullet">
+<li data-line="2" dir="auto"><span class="list-bullet"></span>1.在文件资源管理器找到上方复制文件夹的地址</li>
+<li data-line="3" dir="auto"><span class="list-bullet"></span>2.在终端（win+R+cmd）用cd命令进入文件夹：cd 粘贴刚才复制的文件</li>
+<li data-line="4" dir="auto"><span class="list-bullet"></span>在终端输入git ls-files查看文件中被git管理的文件</li>
+</ul>
+</li>
+<li data-line="5" dir="auto"><span class="list-bullet"></span>在终端移出git的管理：git rm --cached 在这个文件夹中需要移出的文件路径（git的同级目录开始）（本地移出）（移出之前要先用cd命令打开）</li>
+<li data-line="6" dir="auto"><span class="list-bullet"></span>git commit -m "移除 <em>文件路径</em> 的版本控制"（把更改提交给远端仓库）<br>
+commit：每保存一次历史版本就是一次提交，随着commit越来越多，会形成一条commit的历史链路<br>
+想看远程有什么更新：在终端运行git pull origin master<br>
+origin：是Git给远程仓库默认起的别名，Git会将远程地址命名为origin，而master时远程仓库的分支名称，因此origin/master就是“远程仓库的master分支”<br>
+创建新分支：基于你现在当前所在的分支创建一个全新的分支<br>
+创建新分支依据：在已有分支的基础上创建新分支<br>
+合并分支：对<strong>AI</strong>说：把把XX分支合并进XX分支<br>
+签出（已分离）（checkout（detached））：点击后整个仓库就会回退到某个历史版本，不过这个状态只适合查看代码，不适合更改代码，因为detached表示分离头指针，表示不处于任何一个分支的管理中，在里面修改容易搞丢代码，想退回去的话点左下角，然后选择回你要的分支，而如果你想基于这个历史版本开发，请务必点击列表顶部的创建新分支。<br>
+commit ID：把鼠标放到某一次提交上面，有一个数字+英文的小编号就是这个ID，这个ID是git通过哈希算法自动计算出来的，一个ID有长有短，一个commit ID在一个仓库里是绝对唯一的，如果我们需要把仓库回退到某一个历史版本，可以在这个版本上右键，然后复制提交哈希(Copy Commit Hash)，然后把这串长ID粘贴给ai，告诉它把仓库回退到ID提交的状态，后面的改动都不要了（ai在底层执行git，reset —hard），如果需要撤回某次提交而不修改后面的提交，让ai把ID的这次提交撤销掉，保持其它不变（ai 在底层执行的是revert命令），不过其实没必要改得这么决绝，把错的历史保留下来也没什么要是这么决绝的改掉了，而以后又发现其实没问题又要后悔自己的冲动了。<br>
+合并分支：可以指挥ai合并<br>
+删除分支时要先切换到其它分支，但最好不要删分支，删了以后可能又会后悔自己的冲动了<br>
+head：当前分支处于哪次commit上<br>
+worktree：建立一个不影响主干文件夹的开发环境<br>
+工作区（working directory）：电脑磁盘上的本地文件夹<br>
+git clone：把远端仓库保存到本地<br>
+git add（添加所有修改到暂存区）+git commit：把本地工作区的改动同步到本地仓库<br>
+git push（将本地仓库的改动推送到远端仓库）<br>
+git pull=git fetch（将远端仓库同步到本地仓库）+git merge（将本地仓库内容同步进本地工作区）<br>
+地址转换规则：<br>
+https格式:<a data-tooltip-position="top" aria-label="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git" rel="noopener nofollow" class="external-link is-unresolved" href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git" target="_self">https://github.com/用户名/仓库名.git</a><br>
+SSH格式：<a data-tooltip-position="top" aria-label="mailto:git@github.com" rel="noopener nofollow" class="external-link is-unresolved" href="mailto:git@github.com" target="_self">git@github.com</a>:用户名/仓库名.git<br>
+sync changes ⬆️：把远端仓库的提交同步到本地仓库<br>
+快捷键：/，快速打开搜索功能<br>
+T：快速定位到文件搜索栏<br>
+L：直接定位文本行号<br>
+？：快捷键的快速速查表<br>
+。：打开网页版的vs code<br>
+fork（叉子，分叉）：复刻，把项目保存一份到自己名下<br>
+协作：先fork一个到自己的vs code里，动手修改代码之前一定要创建分支，这样在同步代码时不会产生冲突，而且要确保自己已经包含了母项目那边最新的代码，可以让ai帮忙同步：告诉ai母项目地址，我要你要母项目的最新改动合并进当前分支，如果有冲突让我选择怎么处理。注意是把多的分支合并进少的的分支<br>
+<span alt="159.png" src=".html" class="internal-embed is-loaded file-embed mod-empty-attachment" target="_self">找不到“159.png”。</span></li>
+<li data-line="36" dir="auto"><span class="list-bullet"></span><strong>GitHub Pages</strong>：GitHub 提供的免费静态网站托管服务，让你能把代码仓库里的 HTML、CSS、JS 文件变成可访问的网页。（CSS：一种样式表文件，用来控制网页的外观和排版）（JS：JavaScript脚本文件，专门用来控制网页的交互行为和动态效果）</li>
+<li data-line="37" dir="auto"><span class="list-bullet"></span><strong>Build and deployment</strong>：构建与部署 —— 指系统如何把你的代码“打包”并“上线”。</li>
+<li data-line="38" dir="auto"><span class="list-bullet"></span><strong>Source</strong>：来源 —— 你选择从哪个分支或文件夹发布网站。</li>
+<li data-line="39" dir="auto"><span class="list-bullet"></span><strong>Deploy from a branch</strong>：从分支部署 —— 表示你希望 GitHub Pages 从某个 Git 分支（如 main）拉取代码来生成网站。</li>
+<li data-line="40" dir="auto"><span class="list-bullet"></span><strong>Branch</strong>：分支 —— Git 中的代码版本线，main 是默认主分支。</li>
+<li data-line="41" dir="auto"><span class="list-bullet"></span><strong>Select branch</strong>：选择分支 —— 下拉菜单让你指定用哪个分支的内容来建站。</li>
+<li data-line="42" dir="auto"><span class="list-bullet"></span><strong>Enforce HTTPS</strong>：强制使用 HTTPS —— 确保网站通过加密连接访问，提升安全性（对默认域名是强制的）。</li>
+<li data-line="43" dir="auto"><span class="list-bullet"></span><strong>Custom domain</strong>：自定义域名</li>
+</ul></div><div class="footer"><div class="data-bar"></div></div></div>
+<div class="back-to-toc"><a href="#top">↑ 返回目录</a></div>
+</section>
+<!-- ===== 计算机工具/obsidian.html ===== -->
+<section class="note" id="note-计算机工具-obsidian">
+<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><div class="header"><h1 class="page-title heading inline-title" id="obsidian_0">obsidian</h1><div class="data-bar"></div></div><div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div><div class="el-h1"><h1 data-heading="概念" dir="auto" class="heading" id="概念_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>概念</h1></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>仓库的根目录：总文件夹的下一级</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>链接深表示该笔记已创建，链接浅表示该笔记未创建</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>.obsidian文件夹是它的配置文件夹，里面的文件存放了关于obsidisn的配置</li>
+<li data-line="3" dir="auto"><span class="list-bullet"></span><span class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>workspace记录的是你上次关闭软件时的界面状态，例如你最后打开了哪几个笔记之类的，这些对别人毫无意义还可能会导致不同设备间的配置冲突，不放到ignore里的话会给你记一大堆垃圾数据，需要在根目录下的.gitignore里加上两行
+<ul class="has-list-bullet">
+<li data-line="4" dir="auto"><span class="list-bullet"></span>.obsidian/workspace.json（不记录桌面端（电脑）的数据）</li>
+<li data-line="5" dir="auto"><span class="list-bullet"></span>.obsidian/workspace-mobile.json（不记录移动端（手机平板）的数据）</li>
+</ul>
+</li>
+<li data-line="6" dir="auto"><span class="list-bullet"></span>在“文件与链接”里可以改变新建笔记的存放位置和附件（如图片）的存放位置</li>
+<li data-line="7" dir="auto"><span class="list-bullet"></span>电脑右下角有笔记的字数显示，平板往左滑右边出来的一栏东西的下方显示字数</li>
+</ul></div><div class="el-h1"><h1 data-heading="技巧" dir="auto" class="heading" id="技巧_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>技巧</h1></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>1.-+空格：分点，敲完回车自动第二个点，tab退格键，变成二级分点</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>2.前后各两个*或control+B加粗文字</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>3.可以在代码块里批注：三个、（记得是英文版的）</li>
+<li data-line="3" dir="auto"><span class="list-bullet"></span>4.链接文件：两个中括号中间放文件（笔记）（没有的话会自己创建）</li>
+<li data-line="4" dir="auto"><span class="list-bullet"></span>5.引入网页链接：contral+k，前面是网页名字，后面是网页地址</li>
+<li data-line="5" dir="auto"><span class="list-bullet"></span>6.打标签：#标签，通过打标签可以给文件建立属性（颜色），建立属性后可以很好的分类</li>
+<li data-line="6" dir="auto"><span class="list-bullet"></span>7.找到笔记连接的页面：右上角出链反链</li>
+<li data-line="7" dir="auto"><span class="list-bullet"></span>8.在文件夹里建立一个和文件夹名一样的文件方便管理</li>
+<li data-line="8" dir="auto"><span class="list-bullet"></span>9.n个#+空格+文字：n级标题</li>
+<li data-line="9" dir="auto"><span class="list-bullet"></span>10.关闭代码折叠功能：obsidian的设计者规定要用这个名字<br>
+1.在.obsidian里创建名为snippets的文件夹（，不然找不到）<br>
+2.在文件夹里创建一个纯文本文件<br>
+3.复制以下代码进去：.markdown-source-view.mod-cm6 .cm-fold-indicator { display: none !important; }<br>
+4.保存然后将后缀名改为.css（Cascading Style Sheets，层叠样式表，能控制视觉元素包括文字与颜色，空间与尺寸，位置与布局，动态与动画......)<br>
+5.在obsidian的设置的外观的css样式代码片段里找到这个文件并打开</li>
+</ul></div><div class="el-h1"><h1 data-heading="插件" dir="auto" class="heading" id="插件_0"><span class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></span>插件</h1></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>1.日记（daily note）：每天生成规定模板的日记，每天进行复盘</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>2.在模板里选择文件夹，该文件夹里的笔记就是模板库了</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>3.可以在左边保存工作区布局</li>
+<li data-line="3" dir="auto"><span class="list-bullet"></span>4.画板工具：画思维导图</li>
+<li data-line="4" dir="auto"><span class="list-bullet"></span>5.contral+m打开mind map插件</li>
+</ul></div><div class="footer"><div class="data-bar"></div></div></div>
+<div class="back-to-toc"><a href="#top">↑ 返回目录</a></div>
+</section>
+<!-- ===== 计算机知识/常见概念.html ===== -->
+<section class="note" id="note-计算机知识-常见概念">
+<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><div class="header"><h1 class="page-title heading inline-title" id="常见概念_0">常见概念</h1><div class="data-bar"></div></div><div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div><div class="el-p"><p dir="auto">1.token是处理人类语言的最基本单位，称为词元，输出具有随机性<br>
+2.Linux：<br>
+3.TenserFlow：<br>
+4.OpenClaw：小龙虾，自己调用工具完成任务，工具</p></div><div class="el-ul"><ul class="has-list-bullet">
+<li data-line="0" dir="auto"><span class="list-bullet"></span>
+<p>1.exec：直接执行各种终端命令，工具</p>
+</li>
+<li data-line="1" dir="auto"><span class="list-bullet"></span>
+<p>2.read：读取各种各样的文件，工具</p>
+</li>
+<li data-line="2" dir="auto"><span class="list-bullet"></span>
+<p>3.process：获取任务进度工具</p>
+</li>
+<li data-line="3" dir="auto"><span class="list-bullet"></span>
+<p>4.session history：调取会话历史工具</p>
+</li>
+<li data-line="4" dir="auto"><span class="list-bullet"></span>
+<p>5.skills：一份份提前写好的提示词，教ai每件事怎么做<br>
+5.API（application programming interface）应用程序编程接口：软件之间通信和共享数据的桥梁，它定义了一套规则和协议，让不同的应用或系统能够以标准化的方式交换信息。客户端（你操作软件）和服务器或系统中间的桥梁，形式上是一段有格式的请求，分为Rest api和Graph QL，日常大部分都是rest：每个资源对应的是URL，APIkey：类似身份证，记录你的信息。</p>
+<p>6.MCP（model context protocol）模型上下文协议：模型和外部世界的一个通信协议，让模型能调外部资源（包括数据库，API，第三方的Saa S），工具，工作路径：prompt&gt;mcp client（客户端：桌面助手，bot，agent）&gt;mcp server（能力适配器，负责和外部通信）&gt;resource tools<br>
+7.http：网页和服务器的一个通信协议<br>
+8.URL：互联网上用于标识和定位资源的标准地理格式，俗称“网址”<br>
+9.JASON（java script object notation）：一种轻量级的数据交换格式，广泛应用于api通信和配置文件<br>
+10.Docker：一个开源的应用容器引擎（装有代码，系统工具，配置文件等），建构一个在不同环境中行为一致的应用。<br>
+11.shell:操作系统中用户与内核之间的接口程序，将命令解释给计算机操作系统。<br>
+12.绝对路径（abusolute path）：从文件系统的根目录开始，包含到达目标文件所需的所有目录层级的完整路径。windows一般这么写：C:\Users\Documents\test.txt（Windows用反斜杠）<br>
+而Mac或Linus 一般这么写：/home/user/Documents/test.txt（正斜杠）<br>
+相对路径（relative path）：相对于当前工作目录的路径。写法举例：..退回上一级<br>
+Windows：..\User\documents(先退再进，此时和原来的在同一目录下，然后再进）<br>
+Mac/Linus：../User/documents（同理）<br>
+注意：..\user会先返回上级目录，然后直接在上级目录里建一个文件，而.\user才会直接在同级目录下建一个文件<br>
+13.skill：通常以文件夹形式存在，自然语言ai自动调用或用智能体强制调用的语言<br>
+14.node.js：一个可以基于chrome，让javascript跨平台运行的环境<br>
+15.cmd和powershell都是命令行工具，但powershell更先进，能执行cmd的所有命令<br>
+16.npm（node package manager）：node.js默认的管理，下载和安装代码模块的工具，当你在开发项目需要用到别人写好的工具时，只需要通过npm install命令来让它们下载到你的项目文件夹中<br>
+17.npx(Node Package eXecuter（执行者））：不会下载并安装到你的项目文件夹里，只会临时运行一下运行包里的命令</p>
+</li>
+</ul></div><div class="footer"><div class="data-bar"></div></div></div>
+<div class="back-to-toc"><a href="#top">↑ 返回目录</a></div>
+</section>
+<!-- ===== 计算机知识/计算机基础知识.html ===== -->
+<section class="note" id="note-计算机知识-计算机基础知识">
+<div class="obsidian-document markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists show-indentation-guide show-properties" data-type="markdown"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><div class="header"><h1 class="page-title heading inline-title" id="计算机基础知识_0">计算机基础知识</h1><div class="data-bar"></div></div><div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div><div class="el-p"><p dir="auto">计算机：电子计算机器，由硬件和软件组成，没软件则为裸机<br>
+服务器:专门给别人提供服务的高性能电脑，负责储存数据，处理请求，运行程序等，24小时工作<br>
+冯·诺伊曼体系：<br>
+1.计算机硬件配置由储存器，运算器，控制器，输入设备和输出设备5部分组成<br>
+2.二进制<br>
+3.将程序（数据和指令序列）预先存放在主存储器中，使计算机在工作时能够自动高速地从存储器中取出指令，并加以执行。<br>
+4.电脑硬件：<br>
+cpu：负责程序控制和运算， 个人电脑cpu有intel和AMD两大家，Intel用LGA接口，表面是铜片，AMD用PGA接口，表面是针。主频越高速度越快，缓存越大储存的数据越多，核数越多运算的工人越多，接口要看和主版接不接得上<br>
+内存RAM：解决了cpu和硬盘之间速度不对等的问题，负责在开机的时候存储数据，硬盘数据交给内存，内存再交给cpu，然后cpu再还给内存，再还给硬盘<br>
+显卡：负责输出显示信号给显示器，显示器展示出来，位宽代表处理速度<br>
+声卡：转换数字信号和声音信号<br>
+网卡：又叫网络接口卡，之前独立存在，现在被集成在主板上，帮助电脑连接网络<br>
+键鼠：键盘和鼠标的合称，电脑最常用的输入设备<br>
+显示器：把电子信号转化为图像，平常也被叫做屏幕<br>
+硬盘:用来存储东西（文件，照片，系统等）的硬件，分为机械硬盘和固态硬盘，机械硬盘HDD（hard-disk（磁盘） drive）依靠磁盘盘片，磁头转动读写，数据储存在盘片上；固态硬盘叫SSD（solid-state drive），固态硬盘有nvme高速接口和sata低速接口，用读写颗粒储存，读：从硬盘中取出数据，写：往硬盘存放数据<br>
+电源：把220v交流电转化为12v直流弱电（也就是说电压比较低），再通过斩波控制电压，将不同电压分别输给主板，硬盘，光驱等计算机部件。<br>
+机箱：装载计算机硬件的容器，保护计算机硬件。<br>
+主板：负责将所有设备直接或间接连接起来，里面有多种芯片负责不同功能，一般都集成了三卡（显卡，网卡，声卡），也有的只集成了声卡和网卡，分为大板（一般）和小板，南桥芯片管低速设备，北桥管高速设备<br>
+5.操作系统：计算机的管理控制程序，是一段程序代码，电脑的管家，用来管理计算机硬件和软件<br>
+有window和Linux，window和linux都有个人版和网络版的操作系统<br>
+家用用个人版操作系统，服务器用网络版操作系统，因为他们处理数据的优缺点不一样，个人版对图像处理优势大，网络版对数据的处理优势大<br>
+6:应用软件：安装在计算机操作系统上，可满足用户具体使用需求的软件。<br>
+7:故障排查：1.快速定位问题方向：如果在“正在启动windows”后就不动了，那就是系统坏了，解决办法：用PE（preinstallation environment）（windows预安装环境，是一个简化版操作系统用来修电脑，装系统或备份数据）备份数据，重装系统。<br>
+如果连“windows”都没看到就是硬件坏了，因为主板上的bios芯片会检查硬件，硬件自检不过，计算机就不继续往下走了，要先检查硬件后才启动Windows系统软件<br>
+硬件一般情况下主板和cpu不出错，方法：把硬件换到正常的电脑上<br>
+8.计算机网络：是将地理位置不同的多台独立计算机，通过通信线路和协议连接，实现资源共享与信息传递的系统<br>
+按拓扑结构分为：总线型，环型，星型，网型，现在用的都是网型，每台计算机都和其它的计算机单独连接，共有n✖️n-1条线<br>
+按地域分为：局域网LAN（一个公司，家庭），城域网MAN（一个区，城市，国家），广域网WAN（一个国家，全世界）（是哪个看参照物），Wi-Fi是无线局域网，覆盖范围较小，是WLAN的一种，WLAN是有线以太局域网，一般用在机场，学校，手机的设置里一般写的是WLAN<br>
+9.交换机（switch）：负责组建局域网，mac地址，一口连接网线，另一头连接设备。（mac地址是厂商在做网卡时放进去的地址，全球唯一，前24位代表厂商地址，后24位代表全球唯一编号）<br>
+10.路由器（router）：将不同的局域网连接起来组建广域网，IP地址<br>
+11.传输介质：目前常用的有线介质有双绞线和光纤，无线有电磁信号，蓝牙<br>
+双绞线：按传输速度分类：5类（百兆），超5类（百兆近千兆），6类（千兆）<br>
+按特点分类：屏蔽和非屏蔽（是否在外面装一层铝膜屏蔽里面的电磁信号）（屏蔽的抗静电干扰性强，价格稍高，一般室外用得多；非屏蔽的重量轻，易弯曲，一般室内用得多）<br>
+光纤：光导纤维，由玻璃或塑料制成，（原理是高中的全反射）<br>
+分为单模：只能传输一种模式的光，传输距离远，外面颜色一般为黄色<br>
+和多模：可以传输多种模式的光，多模光纤传输距离比近，外面一般为橘红色<br>
+12.单位：8个比特（bit）=1字节（byte），十亿（10<strong>9）bps（bits per second）=1Gbps（Gigabits per second）=10</strong>（-3）Gbps（Terabits per second）<br>
+13.ISO（International organization for Standardization)制了计算机网络通信协议的标准OSI<br>
+14.OSI七层模型：<br>
+1.物理层（physical layer）：利用传输介质为数据链路层提供物理连接负责透明地传输原始比特流。它定义了网线，光纤长什么样，以及光电信号怎么发。<br>
+2.数据链路层（data link layer）：在物理层提供的比特流的基础上，建立相邻节点间的数据链路。通过差错控制（纠正传输的数据错误），流量控制（匹配双方的传输速度），以及寻找物理地址（mac地址：厂家给网卡的全球唯一的号码，比如交换机会去找计算机的MAC地址，而IP地址：为设备定位），将可能出错的物理连接改造为逻辑上无差错的数据链路，其数据单元为“帧”<br>
+3.网络层（network layer）：负责为网络中的不同设备提供逻辑寻址（如从一个IP地址到另一个IP地址）和路由选择，它决定了数据包从源端到目的端跨越多个网络的最佳传输路径，并处理拥塞控制与网络互练，其数据单位为数据包。<br>
+4.传输层（transport layer）：提供端到端的数据传输服务。通过分段与重组，流量控制，差错恢复等机制，屏蔽下层数据通信等细节。常见的协议包括提供可靠传输的TCP（Transmission Control Protocol)和提供高效传输的UDP(User Datagram Protocol)，其数据单元为“段”<br>
+5.会话层（session layer）：负责建立，管理和终止表示层实体之间的通信对话，提供会话控制和同步机制，允许在长途传输中断后从检查点恢复，而无需重新传输全部数据。<br>
+6.表示层（presentation layer）：处理两个通信系统间交换信息的表示方式。负责数据的格式转换，加密与解密，压缩与解压缩，确保一个系统应用发出的信息能被另一个系统的应用层读取<br>
+7.应用层（application layer）：osi参考模型的最高层，直接为用户的应用程序提供网络服务接口。它包含了各种高层协议（如HTTP，FTP，SMTP等），支持文件传输，电子邮件，网页浏览等具体的网络应用。<br>
+总结：你操作➡️应用层发出请求（如http请求）➡️表示层转换成计算机能懂的特定编码格式，还会加密和压缩➡️会话层建立联系➡️传输层分包（把大的数据变成小块）贴端口（贴上是哪个软件收）➡️网络层贴IP（源IP是你的电脑，目的IP是服务器）找路线➡️数据链路层贴MAC地址（源MAC是你的网卡，目的MAC是你家路由器的网卡），防出错➡️物理层变成电信号传递出去<br>
+15.TCP</p></div><div class="footer"><div class="data-bar"></div></div></div>
+<div class="back-to-toc"><a href="#top">↑ 返回目录</a></div>
+</section>
+</div>
+</body>
+</html>

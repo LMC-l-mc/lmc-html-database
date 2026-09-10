@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[index]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.jpg</url><title>index</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 10 Sep 2026 01:34:34 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 10 Sep 2026 01:34:33 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[常见概念]]></title><description><![CDATA[1.token是处理人类语言的最基本单位，称为词元，输出具有随机性
+2.Linux：
+3.TenserFlow：
+4.OpenClaw：小龙虾，自己调用工具完成任务，工具 1.exec：直接执行各种终端命令，工具 2.read：读取各种各样的文件，工具 3.process：获取任务进度工具 4.session history：调取会话历史工具 5.skills：一份份提前写好的提示词，教ai每件事怎么做
+5.API（application programming interface）应用程序编程接口：软件之间通信和共享数据的桥梁，它定义了一套规则和协议，让不同的应用或系统能够以标准化的方式交换信息。客户端（你操作软件）和服务器或系统中间的桥梁，形式上是一段有格式的请求，分为Rest api和Graph QL，日常大部分都是rest：每个资源对应的是URL，APIkey：类似身份证，记录你的信息。
+6.MCP（model context protocol）模型上下文协议：模型和外部世界的一个通信协议，让模型能调外部资源（包括数据库，API，第三方的Saa S），工具，工作路径：prompt&gt;mcp client（客户端：桌面助手，bot，agent）&gt;mcp server（能力适配器，负责和外部通信）&gt;resource tools
+7.http：网页和服务器的一个通信协议
+8.URL：互联网上用于标识和定位资源的标准地理格式，俗称“网址”
+9.JASON（java script object notation）：一种轻量级的数据交换格式，广泛应用于api通信和配置文件
+10.Docker：一个开源的应用容器引擎（装有代码，系统工具，配置文件等），建构一个在不同环境中行为一致的应用。
+11.shell:操作系统中用户与内核之间的接口程序，将命令解释给计算机操作系统。
+12.绝对路径（abusolute path）：从文件系统的根目录开始，包含到达目标文件所需的所有目录层级的完整路径。windows一般这么写：C:\Users\Documents\test.txt（Windows用反斜杠）
+而Mac或Linus 一般这么写：/home/user/Documents/test.txt（正斜杠）
+相对路径（relative path）：相对于当前工作目录的路径。写法举例：..退回上一级
+Windows：..\User\documents(先退再进，此时和原来的在同一目录下，然后再进）
+Mac/Linus：../User/documents（同理）
+注意：..\user会先返回上级目录，然后直接在上级目录里建一个文件，而.\user才会直接在同级目录下建一个文件
+13.skill：通常以文件夹形式存在，自然语言ai自动调用或用智能体强制调用的语言
+14.node.js：一个可以基于chrome，让javascript跨平台运行的环境
+15.cmd和powershell都是命令行工具，但powershell更先进，能执行cmd的所有命令
+16.npm（node package manager）：node.js默认的管理，下载和安装代码模块的工具，当你在开发项目需要用到别人写好的工具时，只需要通过npm install命令来让它们下载到你的项目文件夹中
+17.npx(Node Package eXecuter（执行者））：不会下载并安装到你的项目文件夹里，只会临时运行一下运行包里的命令 ]]></description><link>计算机知识/常见概念.html</link><guid isPermaLink="false">计算机知识/常见概念.md</guid><pubDate>Tue, 01 Sep 2026 09:27:13 GMT</pubDate></item><item><title><![CDATA[obsidian]]></title><description><![CDATA[
+仓库的根目录：总文件夹的下一级
+链接深表示该笔记已创建，链接浅表示该笔记未创建
+.obsidian文件夹是它的配置文件夹，里面的文件存放了关于obsidisn的配置
+workspace记录的是你上次关闭软件时的界面状态，例如你最后打开了哪几个笔记之类的，这些对别人毫无意义还可能会导致不同设备间的配置冲突，不放到ignore里的话会给你记一大堆垃圾数据，需要在根目录下的.gitignore里加上两行 .obsidian/workspace.json（不记录桌面端（电脑）的数据）
+.obsidian/workspace-mobile.json（不记录移动端（手机平板）的数据） 在“文件与链接”里可以改变新建笔记的存放位置和附件（如图片）的存放位置
+电脑右下角有笔记的字数显示，平板往左滑右边出来的一栏东西的下方显示字数 1.-+空格：分点，敲完回车自动第二个点，tab退格键，变成二级分点
+2.前后各两个*或control+B加粗文字
+3.可以在代码块里批注：三个、（记得是英文版的）
+4.链接文件：两个中括号中间放文件（笔记）（没有的话会自己创建）
+5.引入网页链接：contral+k，前面是网页名字，后面是网页地址
+6.打标签：#标签，通过打标签可以给文件建立属性（颜色），建立属性后可以很好的分类
+7.找到笔记连接的页面：右上角出链反链
+8.在文件夹里建立一个和文件夹名一样的文件方便管理
+9.n个#+空格+文字：n级标题
+10.关闭代码折叠功能：obsidian的设计者规定要用这个名字
+1.在.obsidian里创建名为snippets的文件夹（，不然找不到）
+2.在文件夹里创建一个纯文本文件
+3.复制以下代码进去：.markdown-source-view.mod-cm6 .cm-fold-indicator { display: none !important; }
+4.保存然后将后缀名改为.css（Cascading Style Sheets，层叠样式表，能控制视觉元素包括文字与颜色，空间与尺寸，位置与布局，动态与动画......)
+5.在obsidian的设置的外观的css样式代码片段里找到这个文件并打开 1.日记（daily note）：每天生成规定模板的日记，每天进行复盘
+2.在模板里选择文件夹，该文件夹里的笔记就是模板库了
+3.可以在左边保存工作区布局
+4.画板工具：画思维导图
+5.contral+m打开mind map插件
+]]></description><link>计算机工具/obsidian.html</link><guid isPermaLink="false">计算机工具/obsidian.md</guid><pubDate>Tue, 01 Sep 2026 09:20:22 GMT</pubDate></item><item><title><![CDATA[github]]></title><description><![CDATA[git：一个开源免费的软件，功能是版本控制，当一个文件夹被git管理起来时，就变成了一个git仓库，被git仓库管理的文件夹下面会生成一个.git的子文件夹用来存放git的版本控制信息，git用commit作为版本控制的基本单元，每完成一次commit，git都保存了一个仓库，此时文件夹里所有文件的状态都被记录了下来，随着commit越来越多，会形成一条commit的历史链路，这样整个仓库都是可回溯的，每个项目参与者的每一次改动都会被这个commit链路记录下来，git的仓库分成两种分别是本地仓库（local repository）和远端仓库（remote repository），GitHub就是一个免费提供远端仓库的网站，hub的意思是中心，汇聚，集合，全世界的很多开发者会把自己用git进行版本控制的仓库，也就是一个个项目的文件夹上传到GitHub网站上
+将本地文件和远端仓库联系：发送给ai：把这个文件（初始化成git项目，并）推送到GitHub上面，远端仓库的地址是XXX
+init（初始化）：把文件夹用git管理起来，让这个文件夹变成一个git仓库
+.gitignore：一个文件，这个文件声明了仓库里哪些文件不应该受到git管理
+操作：打开VS code，在仓库根目录上面创建一个.gitignore文件然后在里面写上不被管理的文件
+补充：查看是否被管理： 1.在文件资源管理器找到上方复制文件夹的地址
+2.在终端（win+R+cmd）用cd命令进入文件夹：cd 粘贴刚才复制的文件
+在终端输入git ls-files查看文件中被git管理的文件 在终端移出git的管理：git rm --cached 在这个文件夹中需要移出的文件路径（git的同级目录开始）（本地移出）（移出之前要先用cd命令打开）
+git commit -m "移除 文件路径 的版本控制"（把更改提交给远端仓库）
+commit：每保存一次历史版本就是一次提交，随着commit越来越多，会形成一条commit的历史链路
+想看远程有什么更新：在终端运行git pull origin master
+origin：是Git给远程仓库默认起的别名，Git会将远程地址命名为origin，而master时远程仓库的分支名称，因此origin/master就是“远程仓库的master分支”
+创建新分支：基于你现在当前所在的分支创建一个全新的分支
+创建新分支依据：在已有分支的基础上创建新分支
+合并分支：对AI说：把把XX分支合并进XX分支
+签出（已分离）（checkout（detached））：点击后整个仓库就会回退到某个历史版本，不过这个状态只适合查看代码，不适合更改代码，因为detached表示分离头指针，表示不处于任何一个分支的管理中，在里面修改容易搞丢代码，想退回去的话点左下角，然后选择回你要的分支，而如果你想基于这个历史版本开发，请务必点击列表顶部的创建新分支。
+commit ID：把鼠标放到某一次提交上面，有一个数字+英文的小编号就是这个ID，这个ID是git通过哈希算法自动计算出来的，一个ID有长有短，一个commit ID在一个仓库里是绝对唯一的，如果我们需要把仓库回退到某一个历史版本，可以在这个版本上右键，然后复制提交哈希(Copy Commit Hash)，然后把这串长ID粘贴给ai，告诉它把仓库回退到ID提交的状态，后面的改动都不要了（ai在底层执行git，reset —hard），如果需要撤回某次提交而不修改后面的提交，让ai把ID的这次提交撤销掉，保持其它不变（ai 在底层执行的是revert命令），不过其实没必要改得这么决绝，把错的历史保留下来也没什么要是这么决绝的改掉了，而以后又发现其实没问题又要后悔自己的冲动了。
+合并分支：可以指挥ai合并
+删除分支时要先切换到其它分支，但最好不要删分支，删了以后可能又会后悔自己的冲动了
+head：当前分支处于哪次commit上
+worktree：建立一个不影响主干文件夹的开发环境
+工作区（working directory）：电脑磁盘上的本地文件夹
+git clone：把远端仓库保存到本地
+git add（添加所有修改到暂存区）+git commit：把本地工作区的改动同步到本地仓库
+git push（将本地仓库的改动推送到远端仓库）
+git pull=git fetch（将远端仓库同步到本地仓库）+git merge（将本地仓库内容同步进本地工作区）
+地址转换规则：
+https格式:<a data-tooltip-position="top" aria-label="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git" rel="noopener nofollow" class="external-link is-unresolved" href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D.git" target="_self">https://github.com/用户名/仓库名.git</a><br>
+SSH格式：<a data-tooltip-position="top" aria-label="mailto:git@github.com" rel="noopener nofollow" class="external-link is-unresolved" href="mailto:git@github.com" target="_self">git@github.com</a>:用户名/仓库名.git
+sync changes ⬆️：把远端仓库的提交同步到本地仓库
+快捷键：/，快速打开搜索功能
+T：快速定位到文件搜索栏
+L：直接定位文本行号
+？：快捷键的快速速查表
+。：打开网页版的vs code
+fork（叉子，分叉）：复刻，把项目保存一份到自己名下
+协作：先fork一个到自己的vs code里，动手修改代码之前一定要创建分支，这样在同步代码时不会产生冲突，而且要确保自己已经包含了母项目那边最新的代码，可以让ai帮忙同步：告诉ai母项目地址，我要你要母项目的最新改动合并进当前分支，如果有冲突让我选择怎么处理。注意是把多的分支合并进少的的分支
+找不到“159.png”。
+GitHub Pages：GitHub 提供的免费静态网站托管服务，让你能把代码仓库里的 HTML、CSS、JS 文件变成可访问的网页。（CSS：一种样式表文件，用来控制网页的外观和排版）（JS：JavaScript脚本文件，专门用来控制网页的交互行为和动态效果）
+Build and deployment：构建与部署 —— 指系统如何把你的代码“打包”并“上线”。
+Source：来源 —— 你选择从哪个分支或文件夹发布网站。
+Deploy from a branch：从分支部署 —— 表示你希望 GitHub Pages 从某个 Git 分支（如 main）拉取代码来生成网站。
+Branch：分支 —— Git 中的代码版本线，main 是默认主分支。
+Select branch：选择分支 —— 下拉菜单让你指定用哪个分支的内容来建站。
+Enforce HTTPS：强制使用 HTTPS —— 确保网站通过加密连接访问，提升安全性（对默认域名是强制的）。
+Custom domain：自定义域名
+]]></description><link>计算机工具/github.html</link><guid isPermaLink="false">计算机工具/github.md</guid><pubDate>Thu, 27 Aug 2026 09:10:02 GMT</pubDate></item><item><title><![CDATA[计算机基础知识]]></title><description><![CDATA[计算机：电子计算机器，由硬件和软件组成，没软件则为裸机
+服务器:专门给别人提供服务的高性能电脑，负责储存数据，处理请求，运行程序等，24小时工作
+冯·诺伊曼体系：
+1.计算机硬件配置由储存器，运算器，控制器，输入设备和输出设备5部分组成
+2.二进制
+3.将程序（数据和指令序列）预先存放在主存储器中，使计算机在工作时能够自动高速地从存储器中取出指令，并加以执行。
+4.电脑硬件：
+cpu：负责程序控制和运算， 个人电脑cpu有intel和AMD两大家，Intel用LGA接口，表面是铜片，AMD用PGA接口，表面是针。主频越高速度越快，缓存越大储存的数据越多，核数越多运算的工人越多，接口要看和主版接不接得上
+内存RAM：解决了cpu和硬盘之间速度不对等的问题，负责在开机的时候存储数据，硬盘数据交给内存，内存再交给cpu，然后cpu再还给内存，再还给硬盘
+显卡：负责输出显示信号给显示器，显示器展示出来，位宽代表处理速度
+声卡：转换数字信号和声音信号
+网卡：又叫网络接口卡，之前独立存在，现在被集成在主板上，帮助电脑连接网络
+键鼠：键盘和鼠标的合称，电脑最常用的输入设备
+显示器：把电子信号转化为图像，平常也被叫做屏幕
+硬盘:用来存储东西（文件，照片，系统等）的硬件，分为机械硬盘和固态硬盘，机械硬盘HDD（hard-disk（磁盘） drive）依靠磁盘盘片，磁头转动读写，数据储存在盘片上；固态硬盘叫SSD（solid-state drive），固态硬盘有nvme高速接口和sata低速接口，用读写颗粒储存，读：从硬盘中取出数据，写：往硬盘存放数据
+电源：把220v交流电转化为12v直流弱电（也就是说电压比较低），再通过斩波控制电压，将不同电压分别输给主板，硬盘，光驱等计算机部件。
+机箱：装载计算机硬件的容器，保护计算机硬件。
+主板：负责将所有设备直接或间接连接起来，里面有多种芯片负责不同功能，一般都集成了三卡（显卡，网卡，声卡），也有的只集成了声卡和网卡，分为大板（一般）和小板，南桥芯片管低速设备，北桥管高速设备
+5.操作系统：计算机的管理控制程序，是一段程序代码，电脑的管家，用来管理计算机硬件和软件
+有window和Linux，window和linux都有个人版和网络版的操作系统
+家用用个人版操作系统，服务器用网络版操作系统，因为他们处理数据的优缺点不一样，个人版对图像处理优势大，网络版对数据的处理优势大
+6:应用软件：安装在计算机操作系统上，可满足用户具体使用需求的软件。
+7:故障排查：1.快速定位问题方向：如果在“正在启动windows”后就不动了，那就是系统坏了，解决办法：用PE（preinstallation environment）（windows预安装环境，是一个简化版操作系统用来修电脑，装系统或备份数据）备份数据，重装系统。
+如果连“windows”都没看到就是硬件坏了，因为主板上的bios芯片会检查硬件，硬件自检不过，计算机就不继续往下走了，要先检查硬件后才启动Windows系统软件
+硬件一般情况下主板和cpu不出错，方法：把硬件换到正常的电脑上
+8.计算机网络：是将地理位置不同的多台独立计算机，通过通信线路和协议连接，实现资源共享与信息传递的系统
+按拓扑结构分为：总线型，环型，星型，网型，现在用的都是网型，每台计算机都和其它的计算机单独连接，共有n✖️n-1条线
+按地域分为：局域网LAN（一个公司，家庭），城域网MAN（一个区，城市，国家），广域网WAN（一个国家，全世界）（是哪个看参照物），Wi-Fi是无线局域网，覆盖范围较小，是WLAN的一种，WLAN是有线以太局域网，一般用在机场，学校，手机的设置里一般写的是WLAN
+9.交换机（switch）：负责组建局域网，mac地址，一口连接网线，另一头连接设备。（mac地址是厂商在做网卡时放进去的地址，全球唯一，前24位代表厂商地址，后24位代表全球唯一编号）
+10.路由器（router）：将不同的局域网连接起来组建广域网，IP地址
+11.传输介质：目前常用的有线介质有双绞线和光纤，无线有电磁信号，蓝牙
+双绞线：按传输速度分类：5类（百兆），超5类（百兆近千兆），6类（千兆）
+按特点分类：屏蔽和非屏蔽（是否在外面装一层铝膜屏蔽里面的电磁信号）（屏蔽的抗静电干扰性强，价格稍高，一般室外用得多；非屏蔽的重量轻，易弯曲，一般室内用得多）
+光纤：光导纤维，由玻璃或塑料制成，（原理是高中的全反射）
+分为单模：只能传输一种模式的光，传输距离远，外面颜色一般为黄色
+和多模：可以传输多种模式的光，多模光纤传输距离比近，外面一般为橘红色
+12.单位：8个比特（bit）=1字节（byte），十亿（109）bps（bits per second）=1Gbps（Gigabits per second）=10（-3）Gbps（Terabits per second）
+13.ISO（International organization for Standardization)制了计算机网络通信协议的标准OSI
+14.OSI七层模型：
+1.物理层（physical layer）：利用传输介质为数据链路层提供物理连接负责透明地传输原始比特流。它定义了网线，光纤长什么样，以及光电信号怎么发。
+2.数据链路层（data link layer）：在物理层提供的比特流的基础上，建立相邻节点间的数据链路。通过差错控制（纠正传输的数据错误），流量控制（匹配双方的传输速度），以及寻找物理地址（mac地址：厂家给网卡的全球唯一的号码，比如交换机会去找计算机的MAC地址，而IP地址：为设备定位），将可能出错的物理连接改造为逻辑上无差错的数据链路，其数据单元为“帧”
+3.网络层（network layer）：负责为网络中的不同设备提供逻辑寻址（如从一个IP地址到另一个IP地址）和路由选择，它决定了数据包从源端到目的端跨越多个网络的最佳传输路径，并处理拥塞控制与网络互练，其数据单位为数据包。
+4.传输层（transport layer）：提供端到端的数据传输服务。通过分段与重组，流量控制，差错恢复等机制，屏蔽下层数据通信等细节。常见的协议包括提供可靠传输的TCP（Transmission Control Protocol)和提供高效传输的UDP(User Datagram Protocol)，其数据单元为“段”
+5.会话层（session layer）：负责建立，管理和终止表示层实体之间的通信对话，提供会话控制和同步机制，允许在长途传输中断后从检查点恢复，而无需重新传输全部数据。
+6.表示层（presentation layer）：处理两个通信系统间交换信息的表示方式。负责数据的格式转换，加密与解密，压缩与解压缩，确保一个系统应用发出的信息能被另一个系统的应用层读取
+7.应用层（application layer）：osi参考模型的最高层，直接为用户的应用程序提供网络服务接口。它包含了各种高层协议（如HTTP，FTP，SMTP等），支持文件传输，电子邮件，网页浏览等具体的网络应用。
+总结：你操作➡️应用层发出请求（如http请求）➡️表示层转换成计算机能懂的特定编码格式，还会加密和压缩➡️会话层建立联系➡️传输层分包（把大的数据变成小块）贴端口（贴上是哪个软件收）➡️网络层贴IP（源IP是你的电脑，目的IP是服务器）找路线➡️数据链路层贴MAC地址（源MAC是你的网卡，目的MAC是你家路由器的网卡），防出错➡️物理层变成电信号传递出去
+15.TCP]]></description><link>计算机知识/计算机基础知识.html</link><guid isPermaLink="false">计算机知识/计算机基础知识.md</guid><pubDate>Thu, 20 Aug 2026 02:51:54 GMT</pubDate></item></channel></rss>
